@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clickhouse-mv-check"
+version = "0.1.0"
+description = "Static and live checks that catch ClickHouse materialized-view bugs before they go silent"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{name = "__AUTHOR__"}]
+keywords = ["clickhouse", "materialized-view", "lint", "static-analysis", "database"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Database",
+    "Topic :: Software Development :: Quality Assurance",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Repository = "https://github.com/__GH_OWNER__/clickhouse-mv-check"
+
+[project.scripts]
+clickhouse-mv-check = "clickhouse_mv_check.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "mypy>=1.11"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clickhouse_mv_check"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
