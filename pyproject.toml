@@ -9,7 +9,7 @@ description = "Static and live checks that catch ClickHouse materialized-view bu
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-authors = [{name = "__AUTHOR__"}]
+authors = [{name = "clickhouse-mv-check"}]
 keywords = ["clickhouse", "materialized-view", "lint", "static-analysis", "database"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -26,7 +26,7 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "https://github.com/__GH_OWNER__/clickhouse-mv-check"
+Repository = "https://github.com/agentscope-ai-java/clickhouse-mv-check"
 
 [project.scripts]
 clickhouse-mv-check = "clickhouse_mv_check.cli:main"
